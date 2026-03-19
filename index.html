@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovator | Bojxona Klubi</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles & Animations -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    
+    html { scroll-behavior: smooth; }
+
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob { animation: blob 10s infinite; }
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animation-delay-4000 { animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .glass-panel-light {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #0099B5 0%, #1EB53A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #FDB11A 0%, #FFD700 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#0B1121] font-sans text-gray-100 selection:bg-[#0099B5] selection:text-white overflow-x-hidden">
+
+  <!-- Navigation (Floating) -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5 md:py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      <div id="nav-container" class="flex items-center justify-between rounded-full transition-all duration-300 px-2">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-tr from-[#0099B5] to-[#1EB53A] flex items-center justify-center shadow-lg shadow-[#0099B5]/30">
+            <i data-lucide="zap" class="w-4 h-4 md:w-5 md:h-5 text-white"></i>
+          </div>
+          <span class="text-lg md:text-xl font-bold tracking-tight text-white">Innovator</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+          <a href="#about" class="hover:text-white transition-colors">Klub haqida</a>
+          <a href="#skills" class="hover:text-white transition-colors">Yo'nalishlar</a>
+          <a href="#details" class="hover:text-white transition-colors">Tafsilotlar</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. Asosiy ekran (Hero Section - Dark & Glowing) -->
+  <header class="relative min-h-[100svh] flex items-center justify-center pt-24 pb-12 px-5 sm:px-12 bg-grid-pattern overflow-hidden">
+    <!-- Animated Glowing Orbs -->
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-[#0099B5] rounded-full mix-blend-screen filter blur-[100px] md:blur-[120px] opacity-40 animate-blob"></div>
+    <div class="absolute top-1/3 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-[#1EB53A] rounded-full mix-blend-screen filter blur-[100px] md:blur-[120px] opacity-30 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-1/4 left-1/2 w-64 h-64 md:w-96 md:h-96 bg-[#FDB11A] rounded-full mix-blend-screen filter blur-[100px] md:blur-[120px] opacity-20 animate-blob animation-delay-4000"></div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto text-center mt-8 md:mt-12 animate-float">
+      <h1 class="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight mb-6 md:mb-8 leading-[1.1]">
+        Maqsadga <br class="hidden sm:block" />
+        <span class="text-gradient">birgalikda</span> erishamiz
+      </h1>
+      
+      <p class="text-lg md:text-2xl text-gray-400 font-medium mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
+        Sizning g'oyalaringiz — eng katta innovatsiyamiz. 
+        <span class="text-gray-200 block md:inline mt-2 md:mt-0"> Tajribalar, xatolardan o'rganish va erkin fikrlash maydoniga xush kelibsiz.</span>
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-5 w-full max-w-md mx-auto sm:max-w-none">
+        <a href="https://forms.gle/Gh1wd59bMRg7xB1h9" target="_blank" rel="noopener noreferrer" class="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-[#0099B5] to-[#1EB53A] text-white px-8 py-4 rounded-full text-lg font-bold overflow-hidden shadow-[0_0_30px_rgba(0,153,181,0.4)] hover:shadow-[0_0_50px_rgba(30,181,58,0.6)] transition-all duration-500 hover:-translate-y-1">
+          <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+          <span class="relative z-10">Klubga a'zo bo'lish</span>
+          <i data-lucide="arrow-right" class="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-6 md:bottom-10 inset-x-0 w-full flex flex-col items-center justify-center gap-2 opacity-50 animate-bounce pointer-events-none">
+      <span class="text-[10px] md:text-xs tracking-[0.2em] uppercase pl-[0.2em] text-center">Pastga</span>
+      <div class="w-px h-8 md:h-12 bg-gradient-to-b from-white to-transparent"></div>
+    </div>
+  </header>
+
+  <!-- 2. Qadriyatlar (Value Proposition - Glass Cards) -->
+  <section id="about" class="py-20 md:py-32 px-5 sm:px-12 lg:px-24 bg-[#0B1121] relative z-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12 md:mb-20">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">Klubda nima ish qilamiz?</h2>
+        <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-2">Byurokratiyadan uzoq, haqiqiy muammolarga zamonaviy yechimlar izlaydigan jamoa.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Card 1 -->
+        <div class="glass-panel rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-[#0099B5] rounded-full mix-blend-screen filter blur-[60px] md:blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+          <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#0099B5]/20 to-transparent border border-[#0099B5]/30 flex items-center justify-center mb-6 md:mb-8">
+            <i data-lucide="lightbulb" class="w-7 h-7 md:w-8 md:h-8 text-[#0099B5]"></i>
+          </div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">Muammolarni o'rganamiz</h3>
+          <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+            Tizimdagi mavjud to'siqlarni chuqur tahlil qilamiz. Har bir muammo — bu rivojlanish uchun yangi imkoniyat eshigi.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-panel rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden border-[#1EB53A]/20">
+          <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-[#1EB53A] rounded-full mix-blend-screen filter blur-[60px] md:blur-[80px] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+          <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#1EB53A]/20 to-transparent border border-[#1EB53A]/30 flex items-center justify-center mb-6 md:mb-8">
+            <i data-lucide="network" class="w-7 h-7 md:w-8 md:h-8 text-[#1EB53A]"></i>
+          </div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">Yechimlar topamiz</h3>
+          <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+            Kreativ fikrlash va sun'iy intellekt kabi zamonaviy texnologiyalar yordamida nostandart yechimlar ishlab chiqamiz.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-panel rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden border-[#FDB11A]/20">
+          <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-[#FDB11A] rounded-full mix-blend-screen filter blur-[60px] md:blur-[80px] opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+          <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#FDB11A]/20 to-transparent border border-[#FDB11A]/30 flex items-center justify-center mb-6 md:mb-8">
+            <i data-lucide="handshake" class="w-7 h-7 md:w-8 md:h-8 text-[#FDB11A]"></i>
+          </div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">Loyihalarni joriy etamiz</h3>
+          <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+            G'oyalar qog'ozda qolmaydi. Ularni aniq prototiplarga aylantirib, amaliyotda sinaymiz va tizimga tatbiq etamiz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Kimlar uchun (Modern Bento Grid UI) -->
+  <section id="skills" class="py-20 md:py-32 bg-white px-5 sm:px-12 lg:px-24 rounded-t-[3rem] md:rounded-t-[4rem] text-[#1A202C] relative z-30">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
+        
+        <div class="lg:w-1/3 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F7FA] border border-gray-200 mb-6">
+            <i data-lucide="target" class="w-4 h-4 text-[#0099B5]"></i>
+            <span class="text-xs md:text-sm font-bold text-[#1A202C] uppercase">Yo'nalishlar</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 leading-tight">
+            Qanday <span class="text-gradient">ko'nikmalar</span> talab etiladi?
+          </h2>
+          <p class="text-base md:text-lg text-gray-500 mb-6 md:mb-8">
+            Innovatsiyalar turli tajribalar to'qnashuvida yaraladi. Bizga standart fikrlashdan yiroq, xilma-xil mutaxassislar kerak.
+          </p>
+          <button class="flex items-center justify-center lg:justify-start gap-2 text-[#0099B5] font-bold hover:gap-4 transition-all mx-auto lg:mx-0">
+            Barcha yo'nalishlarni ko'rish <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+        
+        <!-- Bento Grid layout -->
+        <div class="lg:w-2/3 w-full grid grid-cols-2 md:grid-cols-3 auto-rows-[120px] md:auto-rows-[140px] gap-3 md:gap-4 mt-4 lg:mt-0">
+          
+          <!-- Main big box -->
+          <div class="col-span-2 md:col-span-2 row-span-2 bg-[#0B1121] rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between group overflow-hidden relative shadow-[0_20px_40px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute -right-10 -top-10 w-40 h-40 md:w-56 md:h-56 bg-[#FDB11A] rounded-full blur-[60px] md:blur-[80px] group-hover:blur-[100px] opacity-30 md:opacity-40 transition-all duration-500"></div>
+            <div class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-[#FDB11A]/20 to-transparent text-[#FDB11A] flex items-center justify-center mb-3 md:mb-4 border border-[#FDB11A]/40 relative z-10 shadow-[0_0_20px_rgba(253,177,26,0.3)]">
+              <i data-lucide="sparkles" class="w-6 h-6 md:w-8 md:h-8 animate-pulse"></i>
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-2xl md:text-3xl font-extrabold mb-1 md:mb-2 text-white tracking-tight">Ulkan g'oya & Intilish</h3>
+              <p class="text-xs md:text-sm text-gray-400 font-medium leading-relaxed">Eng asosiysi — o'zgartirish istagi va chegaralarni buzishga bo'lgan jasorat.</p>
+            </div>
+          </div>
+
+          <!-- Dasturlash -->
+          <div class="col-span-1 row-span-1 bg-gradient-to-br from-[#0099B5] to-[#007A90] rounded-2xl md:rounded-3xl p-4 md:p-6 flex flex-col justify-center items-center text-center hover:scale-[1.03] active:scale-95 transition-all duration-300 shadow-lg shadow-[#0099B5]/40 text-white relative overflow-hidden group cursor-pointer">
+            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <i data-lucide="code" class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 relative z-10 drop-shadow-md"></i>
+            <span class="text-sm md:text-base font-bold relative z-10 tracking-wide">Dasturlash</span>
+          </div>
+
+          <!-- Robototexnika -->
+          <div class="col-span-1 row-span-1 bg-gradient-to-br from-[#1EB53A] to-[#158C2B] rounded-2xl md:rounded-3xl p-4 md:p-6 flex flex-col justify-center items-center text-center hover:scale-[1.03] active:scale-95 transition-all duration-300 shadow-lg shadow-[#1EB53A]/40 text-white relative overflow-hidden group cursor-pointer">
+            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <i data-lucide="bot" class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 relative z-10 drop-shadow-md"></i>
+            <span class="text-sm md:text-base font-bold relative z-10 tracking-wide">Robototexnika</span>
+          </div>
+
+          <!-- Grafik dizayn -->
+          <div class="col-span-1 row-span-1 bg-gradient-to-br from-[#FDB11A] to-[#E59E00] rounded-2xl md:rounded-3xl p-4 md:p-6 flex flex-col justify-center items-center text-center hover:scale-[1.03] active:scale-95 transition-all duration-300 shadow-lg shadow-[#FDB11A]/40 text-[#1A202C] relative overflow-hidden group cursor-pointer">
+            <div class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <i data-lucide="palette" class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 relative z-10 drop-shadow-sm"></i>
+            <span class="text-sm md:text-base font-extrabold relative z-10 tracking-wide">Grafik dizayn</span>
+          </div>
+
+          <!-- Media & SMM -->
+          <div class="col-span-2 md:col-span-1 row-span-1 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl md:rounded-3xl p-4 md:p-6 flex flex-row md:flex-col justify-center items-center text-center gap-3 md:gap-4 hover:scale-[1.03] active:scale-95 transition-all duration-300 shadow-lg shadow-indigo-500/40 text-white relative overflow-hidden group cursor-pointer">
+            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="flex gap-2 md:gap-3 relative z-10 drop-shadow-md">
+              <i data-lucide="smartphone" class="w-7 h-7 md:w-8 md:h-8"></i>
+              <i data-lucide="pen-tool" class="w-7 h-7 md:w-8 md:h-8"></i>
+            </div>
+            <span class="text-sm md:text-base font-bold relative z-10 tracking-wide">Media & SMM</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Iqtibos bloki (Bold Social Proof) -->
+  <section class="relative py-24 md:py-40 bg-[#0B1121] overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80')] bg-cover bg-fixed bg-center opacity-20 mix-blend-luminosity"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-[#0B1121] opacity-10"></div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-5 text-center">
+      <div class="w-16 h-16 md:w-24 md:h-24 mx-auto glass-panel rounded-full flex items-center justify-center mb-6 md:mb-10 border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+        <i data-lucide="quote" class="w-6 h-6 md:w-10 md:h-10 text-white"></i>
+      </div>
+      <p class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-snug md:leading-tight tracking-tight px-2">
+        "Tizimning haqiqiy kuchi serverlarda emas, balki xodimlarning <br class="hidden md:block" />
+        <span class="text-gradient-gold">qoliplarni buzuvchi tafakkurida.</span>"
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Klubimiz qanday ishlaydi (Futuristic details) -->
+  <section id="details" class="py-20 md:py-32 px-5 sm:px-12 lg:px-24 bg-[#0B1121] relative z-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="glass-panel rounded-[2rem] md:rounded-[3rem] p-5 sm:p-8 md:p-16 relative overflow-hidden">
+        <!-- Tech grid background -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-50"></div>
+
+        <div class="relative z-10 w-full max-w-4xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 md:mb-12 text-center">
+            Format. Makon. <span class="text-gradient">Natija.</span>
+          </h2>
+          
+          <div class="space-y-4 md:space-y-8">
+            <!-- Detail Item -->
+            <div class="glass-panel p-5 md:p-6 rounded-2xl md:rounded-3xl flex flex-col sm:flex-row gap-4 md:gap-6 items-start sm:items-center hover:bg-white/5 transition-colors border border-white/5 text-center sm:text-left">
+              <div class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-[#0099B5]/20 flex-shrink-0 flex items-center justify-center border border-[#0099B5]/30 mx-auto sm:mx-0">
+                <i data-lucide="map-pin" class="w-6 h-6 md:w-8 md:h-8 text-[#0099B5]"></i>
+              </div>
+              <div>
+                <h4 class="text-lg md:text-xl font-bold text-white mb-1">Manzil</h4>
+                <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+                  <strong>"Toshkent-AERO"</strong> ixtisoslashtirilgan bojxona kompleksi (IBK). Maxsus innovatsion hudud.
+                </p>
+              </div>
+            </div>
+
+            <!-- Detail Item -->
+            <div class="glass-panel p-5 md:p-6 rounded-2xl md:rounded-3xl flex flex-col sm:flex-row gap-4 md:gap-6 items-start sm:items-center hover:bg-white/5 transition-colors border border-white/5 text-center sm:text-left">
+              <div class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-[#1EB53A]/20 flex-shrink-0 flex items-center justify-center border border-[#1EB53A]/30 mx-auto sm:mx-0">
+                <i data-lucide="calendar-days" class="w-6 h-6 md:w-8 md:h-8 text-[#1EB53A]"></i>
+              </div>
+              <div>
+                <h4 class="text-lg md:text-xl font-bold text-white mb-1">Uchrashuvlar</h4>
+                <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+                  Haftada <strong>1 marta</strong> offlayn formatda. Ochiq muloqot, taqdimotlar va brainstorming seanslari.
+                </p>
+              </div>
+            </div>
+
+            <!-- Detail Item -->
+            <div class="glass-panel p-5 md:p-6 rounded-2xl md:rounded-3xl flex flex-col sm:flex-row gap-4 md:gap-6 items-start sm:items-center hover:bg-white/5 transition-colors border border-white/5 text-center sm:text-left">
+              <div class="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-[#FDB11A]/20 flex-shrink-0 flex items-center justify-center border border-[#FDB11A]/30 mx-auto sm:mx-0">
+                <i data-lucide="target" class="w-6 h-6 md:w-8 md:h-8 text-[#FDB11A]"></i>
+              </div>
+              <div>
+                <h4 class="text-lg md:text-xl font-bold text-white mb-1">Amaliyot</h4>
+                <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+                  Faqat nazariya emas. Tanlangan loyihalar bo'yicha aniq <strong>amaliy vazifalar</strong> va sprintlar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Futer (Premium Call to Action) -->
+  <footer class="bg-black pt-20 md:pt-32 pb-10 md:pb-12 px-5 sm:px-12 text-center relative overflow-hidden border-t border-white/10">
+    <div class="absolute top-[-20%] md:top-[-50%] left-1/2 transform -translate-x-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[1000px] bg-gradient-to-b from-[#0099B5]/20 to-transparent rounded-full filter blur-[100px] md:blur-[150px] opacity-40 md:opacity-50 pointer-events-none"></div>
+    
+    <div class="max-w-5xl mx-auto relative z-10 mb-16 md:mb-24">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight leading-tight">
+        G'oyalaringiz qog'ozda <br class="block sm:hidden" /><span class="text-gradient">qolib ketmasin.</span>
+      </h2>
+      <p class="text-lg md:text-2xl text-gray-400 mb-10 md:mb-12 font-medium px-4">
+        Bojxona tizimining yangi davri aynan sizning g'oyangizdan boshlanishi mumkin.
+      </p>
+      
+      <a href="https://forms.gle/Gh1wd59bMRg7xB1h9" target="_blank" rel="noopener noreferrer" class="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 md:px-12 md:py-5 rounded-full text-lg md:text-xl font-extrabold overflow-hidden transition-all hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.2)] md:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+        <span class="relative z-10">Hoziroq qo'shilish</span>
+        <i data-lucide="arrow-right" class="w-5 h-5 md:w-6 md:h-6 relative z-10 group-hover:translate-x-1 group-hover:-rotate-45 transition-transform duration-300"></i>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#FDB11A] to-[#FDB11A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+      </a>
+    </div>
+
+    <!-- Bottom links -->
+    <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-xs md:text-sm">
+      <div class="flex items-center gap-2 md:gap-3">
+        <i data-lucide="zap" class="w-4 h-4 md:w-5 md:h-5 text-[#0099B5]"></i>
+        <span class="font-bold text-gray-300 tracking-wider">INNOVATOR CLUB</span>
+      </div>
+      <p class="text-center md:text-left leading-relaxed px-4 md:px-0">© <span id="year"></span>. Toshkent-AERO IBK.<br class="block md:hidden"/> Barcha huquqlar himoyalangan.</p>
+      <div class="flex gap-6 md:gap-8 font-medium">
+        <a href="https://t.me/ShNormamatov" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">by SHAKHOBIDDIN NORMAMATOV</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+    
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll Logic for Navbar
+    const navbar = document.getElementById('navbar');
+    const navContainer = document.getElementById('nav-container');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        // Scrolled down state
+        navbar.classList.remove('py-5', 'md:py-6');
+        navbar.classList.add('py-3', 'md:py-4');
+        
+        navContainer.classList.remove('px-2');
+        navContainer.classList.add('glass-panel', 'px-4', 'md:px-6', 'py-2', 'md:py-3', 'shadow-2xl', 'shadow-black/50');
+      } else {
+        // Top state
+        navbar.classList.add('py-5', 'md:py-6');
+        navbar.classList.remove('py-3', 'md:py-4');
+        
+        navContainer.classList.add('px-2');
+        navContainer.classList.remove('glass-panel', 'px-4', 'md:px-6', 'py-2', 'md:py-3', 'shadow-2xl', 'shadow-black/50');
+      }
+    });
+  </script>
+</body>
+</html>
